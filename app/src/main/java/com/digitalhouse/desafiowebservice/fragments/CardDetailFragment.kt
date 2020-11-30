@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.digitalhouse.desafiowebservice.R
+import com.digitalhouse.desafiowebservice.entities.Image
 import com.digitalhouse.desafiowebservice.entities.Thumbnail
 import kotlinx.android.synthetic.main.fragment_card_detail.*
 import kotlinx.android.synthetic.main.fragment_card_detail.view.*
@@ -39,22 +41,40 @@ class CardDetailFragment : Fragment() {
         arguments?.getString("price")?.let {
             view.tv_price.text = it
         }
-        arguments?.getString("date")?.let {
-            view.tv_date_detail.text = it
-        }
+//        arguments?.getString("date")?.let {
+//            view.tv_date_detail.text = it
+//        }
 
         arguments?.getSerializable("thumb")?.let {
             it as Thumbnail
 
-            val thumb = view.findViewById<ImageView>(R.id.item_image_hqs)
+            val thumb = view.findViewById<ImageView>(R.id.iv_thumbnail)
 
-            Glide.with(this).asBitmap()
-                        .load(it.path +  "." + it.extension)
+            context?.let { it1 ->
+                Glide.with(it1).asBitmap()
+                        .load("${it.path}.${it.extension}")
                         .into(thumb)
-
-
-            Toast.makeText(context, it.path +  "." + it.extension, Toast.LENGTH_SHORT).show()
+            }
         }
+
+
+        arguments?.getSerializable("images")?.let {
+                it as Image
+
+
+            val cardDetail = view.findViewById<ImageView>(R.id.item_image_hqs)
+
+
+            context?.let { it1 ->
+                Glide.with(it1).asBitmap()
+                        .load("${it.path}.${it.extension}")
+                        .into(cardDetail)
+            }
+
+
+        }
+
+
 
 
 

@@ -2,6 +2,7 @@ package com.digitalhouse.desafiowebservice.entities
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 import java.security.cert.Extension
 import java.util.*
 
@@ -24,7 +25,7 @@ data class ComicPrice(
 data class Image(
         val path: String,
         val extension: String
-)
+): Serializable
 
 
 

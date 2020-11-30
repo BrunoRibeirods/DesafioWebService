@@ -73,15 +73,20 @@ class MainFragment : Fragment(), HqsAdapter.OnClickHqListener {
         }
         adapter.notifyItemChanged(position)
 
-
+        val resposta = when(comic.images.size){
+                0 -> null
+                else -> comic.images[0]
+        }
 
         bundle = bundleOf("nome" to comic.title,
                 "description" to comic.description,
                 "page" to comic.pageCount.toString(),
                 "price" to comic.prices[0].price.toString(),
                 "date" to comic.dates[0].date,
-                "thumb" to comic.thumbnail
+                "thumb" to comic.thumbnail,
+                "images" to resposta
         )
+
 
 
 

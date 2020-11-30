@@ -20,10 +20,12 @@ class HqsAdapter(private val listOfHqs: List<Hqs>, val listener: OnClickHqListen
     override fun onBindViewHolder(holder: HqsViewHolder, position: Int) {
         val current = listOfHqs[position]
 
+        for ( i in current.images){
+            Glide.with(holder.itemView.context).asBitmap()
+                    .load("${i.path }.${i.extension}")
+                    .into(holder.image_hq)
+        }
 
-        Glide.with(holder.itemView.context).asBitmap()
-               .load(R.drawable.marvel_logo)
-               .into(holder.image_hq)
 
         holder.number_hq.text = "#" + current.id.toString()
 
