@@ -75,24 +75,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <TextView
         android:id="@+id/tv_description"
         android:layout_width="340dp"
         android:layout_height="200dp"
         android:layout_marginTop="45dp"
-        android:text="Description: Not Found"
+        android:text="Descrição Não encontrada"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.714" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -123,7 +123,7 @@
                 android:id="@+id/tv_date_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Not Found"
+                android:text=" Data não encontrada"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -137,7 +137,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prices:  $"
+                android:text="Prices:"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -146,7 +146,7 @@
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not Found"
+                android:text=" Valor não encontrado"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -169,7 +169,7 @@
                 android:id="@+id/tv_page"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" 38"
+                android:text="0"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 

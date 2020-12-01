@@ -49,7 +49,7 @@ class CardDetailFragment : Fragment() {
             view.tv_page.text = it
         }
         arguments?.getString("price")?.let {
-            view.tv_price.text = it
+            view.tv_price.text = " $" + it
         }
 
         arguments?.getString("dates")?.let {
