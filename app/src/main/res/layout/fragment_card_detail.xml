@@ -75,7 +75,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.464" />
@@ -89,22 +89,22 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.713" />
 
     <LinearLayout
-        android:layout_marginTop="250dp"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_marginTop="250dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925">
+        app:layout_constraintVertical_bias="0.932">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -123,7 +123,7 @@
                 android:id="@+id/tv_date_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" April 30, 2014"
+                android:text=" Not Found"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -146,7 +146,7 @@
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5.99"
+                android:text="Not Found"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
@@ -177,8 +177,6 @@
 
 
     </LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

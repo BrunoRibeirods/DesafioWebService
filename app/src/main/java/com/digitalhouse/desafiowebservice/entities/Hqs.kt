@@ -5,7 +5,6 @@ import android.accounts.AuthenticatorDescription
 data class Hqs(
     val id: Int,
     val title: String,
-    val path: String,
     val thumbnail: Thumbnail,
     val description: String,
     val pageCount: Int,

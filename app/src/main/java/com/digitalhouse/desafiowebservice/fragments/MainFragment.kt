@@ -79,13 +79,18 @@ class MainFragment : Fragment(), HqsAdapter.OnClickHqListener {
                 else -> comic.images[0]
         }
 
+        val respostaDate = when(comic.dates[1].date){
+            "-0001-11-30T00:00:00-0500" -> null
+            else -> comic.dates[1].date
+        }
+
 
         bundle = bundleOf("nome" to comic.title,
                 "description" to comic.description,
                 "page" to comic.pageCount.toString(),
                 "price" to comic.prices[0].price.toString(),
                 "thumb" to comic.thumbnail,
-                "dates" to comic.dates[0].date,
+                "dates" to respostaDate,
                 "images" to resposta
         )
 

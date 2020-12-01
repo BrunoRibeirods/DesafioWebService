@@ -2,8 +2,11 @@ package com.digitalhouse.desafiowebservice.entities
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import org.joda.time.DateTime
 import java.io.Serializable
 import java.security.cert.Extension
+import java.sql.Date
+import java.text.DateFormat
 import java.util.*
 
 data class Res(val data: Data)

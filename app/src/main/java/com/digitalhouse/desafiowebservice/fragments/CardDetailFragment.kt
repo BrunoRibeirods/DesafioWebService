@@ -1,5 +1,6 @@
 package com.digitalhouse.desafiowebservice.fragments
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +23,7 @@ import kotlinx.android.synthetic.main.fragment_card_detail.view.*
 import org.joda.time.format.DateTimeFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDate
+import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -29,6 +31,7 @@ import java.util.*
 class CardDetailFragment : Fragment() {
 
 
+    @SuppressLint("NewApi")
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -50,8 +53,19 @@ class CardDetailFragment : Fragment() {
         }
 
         arguments?.getString("dates")?.let {
-            view.tv_date_detail.text = it
+
+
+            //val odt = OffsetDateTime.parse ( it , DateTimeFormatter.ofPattern ( "yyyy-MM-dd'T'HH:mm:ss-SSSS", Locale.ENGLISH))
+
+            val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss-SSSS", Locale.ENGLISH);
+            val outputFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy", Locale.ENGLISH)
+            val date = LocalDate.parse(it, inputFormatter);
+            val formattedDate = outputFormatter.format(date);
+
+            view.tv_date_detail.text = formattedDate.toString()
         }
+
+
 
 
 
