@@ -16,11 +16,11 @@ class MainViewModel(val repository: Repository): ViewModel() {
         try {
             viewModelScope.launch {
                 listaHqs.value = repository.getAllComics(
-                        10,
+                        9,
                         10,
                         "1",
-                        "apikey",
-                        "hash"
+                        "0a5637945d1555943781a5d1b85242df",
+                        "02b8358994e987547bbd221ba79d53a4"
                 ).data.results
 
 

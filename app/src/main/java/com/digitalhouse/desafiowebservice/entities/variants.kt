@@ -14,7 +14,7 @@ data class Data(val offset: Int, var results: List<Hqs>)
 data class ComicDate(
         val type: String,
         val date: String
-)
+): Serializable
 
 
 data class ComicPrice(

@@ -20,6 +20,7 @@ import com.digitalhouse.desafiowebservice.adapters.HqsAdapter
 import com.digitalhouse.desafiowebservice.entities.Hqs
 import com.digitalhouse.desafiowebservice.service.service
 import com.digitalhouse.desafiowebservice.ui.MainViewModel
+import java.util.*
 
 class MainFragment : Fragment(), HqsAdapter.OnClickHqListener {
     lateinit var gridLayoutManager: GridLayoutManager
@@ -78,12 +79,13 @@ class MainFragment : Fragment(), HqsAdapter.OnClickHqListener {
                 else -> comic.images[0]
         }
 
+
         bundle = bundleOf("nome" to comic.title,
                 "description" to comic.description,
                 "page" to comic.pageCount.toString(),
                 "price" to comic.prices[0].price.toString(),
-                "date" to comic.dates[0].date,
                 "thumb" to comic.thumbnail,
+                "dates" to comic.dates[0].date,
                 "images" to resposta
         )
 
