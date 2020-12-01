@@ -1,29 +1,27 @@
 package com.digitalhouse.desafiowebservice.fragments
 
 import android.annotation.SuppressLint
-import android.os.Build
+import android.app.AlertDialog
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.Toast
-import androidx.annotation.Nullable
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.digitalhouse.desafiowebservice.R
-import com.digitalhouse.desafiowebservice.entities.ComicDate
-import com.digitalhouse.desafiowebservice.entities.Data
 import com.digitalhouse.desafiowebservice.entities.Image
 import com.digitalhouse.desafiowebservice.entities.Thumbnail
 import kotlinx.android.synthetic.main.fragment_card_detail.*
 import kotlinx.android.synthetic.main.fragment_card_detail.view.*
-import org.joda.time.format.DateTimeFormat
-import java.text.SimpleDateFormat
+import kotlinx.android.synthetic.main.item_hqs.view.*
 import java.time.LocalDate
-import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
@@ -48,24 +46,23 @@ class CardDetailFragment : Fragment() {
         arguments?.getString("page")?.let {
             view.tv_page.text = it
         }
+
         arguments?.getString("price")?.let {
             view.tv_price.text = " $" + it
         }
 
         arguments?.getString("dates")?.let {
 
-
-            //val odt = OffsetDateTime.parse ( it , DateTimeFormatter.ofPattern ( "yyyy-MM-dd'T'HH:mm:ss-SSSS", Locale.ENGLISH))
-
-            val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss-SSSS", Locale.ENGLISH);
+            val inputFormatter = DateTimeFormatter.ofPattern(
+                    "yyyy-MM-dd'T'HH:mm:ss-SSSS",
+                    Locale.ENGLISH
+            );
             val outputFormatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy", Locale.ENGLISH)
             val date = LocalDate.parse(it, inputFormatter);
             val formattedDate = outputFormatter.format(date);
 
             view.tv_date_detail.text = formattedDate.toString()
         }
-
-
 
 
 
@@ -85,7 +82,6 @@ class CardDetailFragment : Fragment() {
         arguments?.getSerializable("images")?.let {
                 it as Image
 
-
             val cardDetail = view.findViewById<ImageView>(R.id.item_image_hqs)
 
 
@@ -96,9 +92,8 @@ class CardDetailFragment : Fragment() {
             }
 
 
+
         }
-
-
 
 
 
@@ -108,6 +103,9 @@ class CardDetailFragment : Fragment() {
 
         return view
     }
+
+
+
 
 
 
