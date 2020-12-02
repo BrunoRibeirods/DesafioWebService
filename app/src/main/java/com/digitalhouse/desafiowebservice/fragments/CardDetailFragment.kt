@@ -6,10 +6,7 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
+import android.view.*
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.Toast
@@ -91,7 +88,9 @@ class CardDetailFragment : Fragment() {
                         .into(cardDetail)
             }
 
-
+            cardDetail.setOnClickListener { view ->
+                imageViewDialog("${it.path}.${it.extension}")
+            }
 
         }
 
@@ -102,6 +101,33 @@ class CardDetailFragment : Fragment() {
         }
 
         return view
+    }
+
+    fun imageViewDialog(url: String){
+        val myDialog = context?.let { Dialog(it, R.style.ThemeOverlay_AppCompat_Dark_ActionBar) }
+
+        myDialog?.setContentView(R.layout.image_view_screen)
+        myDialog?.setTitle("Image")
+
+        val button = myDialog?.findViewById<ImageView>(R.id.btn_close_dialog)
+        val image = myDialog?.findViewById<ImageView>(R.id.iv_image_dialog)
+
+        button?.setOnClickListener {
+            myDialog.cancel()
+        }
+
+        context?.let {
+            if (image != null) {
+                Glide.with(it).asBitmap()
+                        .load(url)
+                        .into(image)
+            }
+        }
+
+
+
+        myDialog?.show()
+
     }
 
 
