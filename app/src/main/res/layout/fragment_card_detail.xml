@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="280dp"
         android:scaleType="fitXY"
-        android:src="@drawable/raster"
+        android:src="@drawable/oopsrec2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,7 +57,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/raster"
+                    android:src="@drawable/error"
                     android:padding="5dp"/>
 
     </LinearLayout>

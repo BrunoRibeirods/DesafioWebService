@@ -16,7 +16,7 @@ class MainViewModel(val repository: Repository): ViewModel() {
         try {
             viewModelScope.launch {
                 listaHqs.value = repository.getAllComics(
-                        9,
+                        8,
                         10,
                         "1",
                         "0a5637945d1555943781a5d1b85242df",
